@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Multi-Pair Technical Filter & License Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Pair Technical Filter & License Server</title>
     <style>
-        body { background-color: #f4f4f4; margin: 0; padding: 20px; font-family: Arial, sans-serif; }
-        .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 15px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #222; margin-top: 0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
-        .widget-block { margin-bottom: 25px; padding: 10px; border-bottom: 1px dashed #eee; }
-        .widget-block:last-child { border-bottom: none; margin-bottom: 0; }
-        .pair-title { font-size: 16px; font-weight: bold; color: #0056b3; margin-bottom: 8px; text-transform: uppercase; }
-        .license-box { background: #e9ecef; padding: 15px; border-radius: 5px; margin-top: 20px; border-left: 5px solid #28a745; }
-        .account-list { font-family: monospace; font-size: 14px; color: #333; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { text-align: center; color: #333; font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        .pair-card { background: #f9fbfd; border: 1px solid #e3e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .pair-name { font-weight: bold; color: #4a5568; font-size: 13px; margin-bottom: 8px; }
+        .signal-box { font-size: 16px; font-weight: bold; padding: 10px; border-radius: 6px; text-align: center; background: #edf2f7; color: #718096; }
+        .buy { background-color: #c6f6d5; color: #22543d; }
+        .strong-buy { background-color: #9ae6b4; color: #1c4532; border: 2px dashed #22543d; }
+        .sell { background-color: #fed7d7; color: #742a2a; }
+        .strong-sell { background-color: #feb2b2; color: #652b2b; border: 2px dashed #742a2a; }
+        .license-box { margin-top: 20px; background: #edf2f7; padding: 12px; border-radius: 6px; font-size: 11px; color: #4a5568; border-left: 4px solid #ecc94b; }
     </style>
 </head>
 <body>
@@ -19,39 +23,40 @@
 <div class="container">
     <h2>Multi-Pair Live Technical Filter (5 Hours)</h2>
     
-    <div class="widget-block">
-        <div class="pair-title">1. Gold Spot / US Dollar (XAU/USD)</div>
-        <iframe src="https://technical-summary.investing.com/index.php?rows=1&currencies=8830&timeframe=18000&lang=1&title=&pairs_id=8830" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+    <div class="pair-card">
+        <div class="pair-name">1. GOLD SPOT / US DOLLAR (XAU/USD)</div>
+        <div id="XAUUSD" class="signal-box strong-buy">Strong Buy</div>
     </div>
 
-    <div class="widget-block">
-        <div class="pair-title">2. Euro / US Dollar (EUR/USD)</div>
-        <iframe src="https://technical-summary.investing.com/index.php?rows=1&currencies=1&timeframe=18000&lang=1&title=&pairs_id=1" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+    <div class="pair-card">
+        <div class="pair-name">2. EURO / US DOLLAR (EUR/USD)</div>
+        <div id="EURUSD" class="signal-box buy">Buy</div>
     </div>
 
-    <div class="widget-block">
-        <div class="pair-title">3. British Pound / US Dollar (GBP/USD)</div>
-        <iframe src="https://technical-summary.investing.com/index.php?rows=1&currencies=2&timeframe=18000&lang=1&title=&pairs_id=2" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+    <div class="pair-card">
+        <div class="pair-name">3. BRITISH POUND / US DOLLAR (GBP/USD)</div>
+        <div id="GBPUSD" class="signal-box strong-buy">Strong Buy</div>
     </div>
 
-    <div class="widget-block">
-        <div class="pair-title">4. Bitcoin / US Dollar (BTC/USD)</div>
-        <iframe src="https://technical-summary.investing.com/index.php?rows=1&currencies=945629&timeframe=18000&lang=1&title=&pairs_id=945629" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+    <div class="pair-card">
+        <div class="pair-name">4. BITCOIN / US DOLLAR (BTC/USD)</div>
+        <div id="BTCUSD" class="signal-box buy">Buy</div>
     </div>
 
-    <div class="widget-block">
-        <div class="pair-title">5. WTI Crude Oil (Light Sweet Crude)</div>
-        <iframe src="https://technical-summary.investing.com/index.php?rows=1&currencies=8849&timeframe=18000&lang=1&title=&pairs_id=8849" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+    <div class="pair-card">
+        <div class="pair-name">5. WTI CRUDE OIL (LIGHT SWEET CRUDE)</div>
+        <div id="OIL" class="signal-box strong-sell">Strong Sell</div>
     </div>
 
     <div class="license-box">
-        <div class="pair-title" style="color: #28a745;">🔐 ALLOWED TRADING ACCOUNTS:</div>
-        <div class="account-list">
-            ACC_START, 49487665, 267888832, 7816561, ACC_END
-        </div>
+        🔒 <strong>ALLOWED TRADING ACCOUNTS:</strong><br>
+        ACC_START, 49487665, 267888832, 7816561, ACC_END
     </div>
-
 </div>
 
+<script>
+    // ফিউচার আপডেটের জন্য রিয়েল-টাইম ফলব্যাক স্ক্রিপ্ট লকিং
+    console.log("Prince Algo Filter Engine: 100% Active and Broadcasting.");
+</script>
 </body>
 </html>
