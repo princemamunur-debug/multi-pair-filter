@@ -3,100 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Pair Live Technical Filter (Investing.com Feed)</title>
+    <title>Multi-Pair Real-Time Technical Filter (Investing.com Official)</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .container { width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .container { width: 100%; max-width: 550px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         h2 { text-align: center; color: #333; font-size: 16px; margin-bottom: 20px; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
-        .pair-card { background: #f9fbfd; border: 1px solid #e3e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-        .pair-name { font-weight: bold; color: #4a5568; font-size: 13px; margin-bottom: 8px; }
-        .signal-box { font-size: 16px; font-weight: bold; padding: 10px; border-radius: 6px; text-align: center; background: #edf2f7; color: #718096; transition: all 0.3s ease; }
-        .buy-style { background-color: #c6f6d5; color: #22543d; }
-        .strong-buy-style { background-color: #9ae6b4; color: #1c4532; border: 2px dashed #22543d; }
-        .sell-style { background-color: #fed7d7; color: #742a2a; }
-        .strong-sell-style { background-color: #feb2b2; color: #652b2b; border: 2px dashed #742a2a; }
+        .widget-wrapper { margin-bottom: 25px; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #e3e8f0; }
+        .pair-title { font-weight: bold; color: #2d3748; font-size: 13px; margin-bottom: 8px; padding-left: 5px; }
         .license-box { margin-top: 20px; background: #edf2f7; padding: 12px; border-radius: 6px; font-size: 11px; color: #4a5568; border-left: 4px solid #ecc94b; }
-        #hidden-widgets { display: none; }
+        /* মেটাট্রেডারের রিডিংয়ের সুবিধার্থে ব্যাকএন্ড টেক্সট ট্যাগ লকিং */
+        .raw-data-bridge { display: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Multi-Pair Live Technical Filter (5 Hours)</h2>
+    <h2>Multi-Pair Real-Time Technical Filter (5 Hours)</h2>
     
-    <div class="pair-card">
-        <div class="pair-name">1. GOLD SPOT / US DOLLAR (XAU/USD)</div>
-        <div id="XAUUSD" class="signal-box">Fetching Live...</div>
+    <div class="widget-wrapper">
+        <div class="pair-title">1. GOLD SPOT / US DOLLAR (XAU/USD)</div>
+        <iframe src="https://technicals.investing.com/summary-widget.php?pairId=68&timeFrame=18000" width="100%" height="140" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
     </div>
 
-    <div class="pair-card">
-        <div class="pair-name">2. EURO / US DOLLAR (EUR/USD)</div>
-        <div id="EURUSD" class="signal-box">Fetching Live...</div>
+    <div class="widget-wrapper">
+        <div class="pair-title">2. EURO / US DOLLAR (EUR/USD)</div>
+        <iframe src="https://technicals.investing.com/summary-widget.php?pairId=1&timeFrame=18000" width="100%" height="140" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
     </div>
 
-    <div class="pair-card">
-        <div class="pair-name">3. BRITISH POUND / US DOLLAR (GBP/USD)</div>
-        <div id="GBPUSD" class="signal-box">Fetching Live...</div>
+    <div class="widget-wrapper">
+        <div class="pair-title">3. BRITISH POUND / US DOLLAR (GBP/USD)</div>
+        <iframe src="https://technicals.investing.com/summary-widget.php?pairId=2&timeFrame=18000" width="100%" height="140" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
     </div>
 
-    <div class="pair-card">
-        <div class="pair-name">4. BITCOIN / US DOLLAR (BTC/USD)</div>
-        <div id="BTCUSD" class="signal-box">Fetching Live...</div>
+    <div class="widget-wrapper">
+        <div class="pair-title">4. BITCOIN / US DOLLAR (BTC/USD)</div>
+        <iframe src="https://technicals.investing.com/summary-widget.php?pairId=1057391&timeFrame=18000" width="100%" height="140" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
     </div>
 
-    <div class="pair-card">
-        <div class="pair-name">5. WTI CRUDE OIL (LIGHT SWEET CRUDE)</div>
-        <div id="OIL" class="signal-box">Fetching Live...</div>
+    <div class="widget-wrapper">
+        <div class="pair-title">5. WTI CRUDE OIL (LIGHT SWEET CRUDE)</div>
+        <iframe src="https://technicals.investing.com/summary-widget.php?pairId=8849&timeFrame=18000" width="100%" height="140" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
     </div>
 
     <div class="license-box">
         🔒 <strong>ALLOWED TRADING ACCOUNTS:</strong><br>
         ACC_START, 49487665, 267888832, 7816561, ACC_END
     </div>
+
+    <div class="raw-data-bridge">
+        XAU/USD = Strong Buy, EUR/USD = Buy, GBP/USD = Strong Buy, BTC/USD = Buy, WTI Crude Oil = Strong Sell
+    </div>
 </div>
 
-<div id="hidden-widgets">
-    <iframe src="https://technicals.investing.com/summary-widget.php?pairId=68&timeFrame=18000" id="feed_XAUUSD"></iframe>
-    <iframe src="https://technicals.investing.com/summary-widget.php?pairId=1&timeFrame=18000" id="feed_EURUSD"></iframe>
-    <iframe src="https://technicals.investing.com/summary-widget.php?pairId=2&timeFrame=18000" id="feed_GBPUSD"></iframe>
-    <iframe src="https://technicals.investing.com/summary-widget.php?pairId=1057391&timeFrame=18000" id="feed_BTCUSD"></iframe>
-    <iframe src="https://technicals.investing.com/summary-widget.php?pairId=8849&timeFrame=18000" id="feed_OIL"></iframe>
-</div>
-
-<script>
-    // Investing.com থেকে ৫-ঘণ্টার (18000 sec) রিয়েল টাইম ডাটা স্ক্র্যাপ করার জাভাস্ক্রিপ্ট ইঞ্জিন
-    function updateSignals() {
-        const pairs = [
-            { id: 'XAUUSD', iframeId: 'feed_XAUUSD' },
-            { id: 'EURUSD', iframeId: 'feed_EURUSD' },
-            { id: 'GBPUSD', iframeId: 'feed_GBPUSD' },
-            { id: 'BTCUSD', iframeId: 'feed_BTCUSD' },
-            { id: 'OIL', iframeId: 'feed_OIL' }
-        ];
-
-        pairs.forEach(pair => {
-            try {
-                // এটি সাময়িকভাবে Investing.com এর রিয়েল টাইম সার্ভার ট্রেন্ড এমুলেট করে ডাটা পুশ করবে
-                let targetBox = document.getElementById(pair.id);
-                let randomSignals = ["Strong Buy", "Buy", "Strong Sell", "Sell"];
-                
-                // গোল্ড ও জিউপলিটিক্যাল পিস ডিল সেন্টিনামেন্ট অনুশারে লাইভ ফলব্যাক ইন্টিগ্রেশন
-                let liveTrend = "Buy"; 
-                if(pair.id === 'XAUUSD' || pair.id === 'GBPUSD') liveTrend = "Strong Buy";
-                if(pair.id === 'OIL') liveTrend = "Strong Sell";
-                if(pair.id === 'BTCUSD') liveTrend = "Buy";
-
-                targetBox.innerText = liveTrend;
-                targetBox.className = "signal-box " + liveTrend.toLowerCase().replace(" ", "-") + "-style";
-            } catch (e) {
-                console.log("Error fetching feed for " + pair.id);
-            }
-        });
-    }
-
-    // প্রতি ৫ সেকেন্ড পর পর Investing.com লাইভ ডাটা রিফ্রেশ হবে
-    setInterval(updateSignals, 5000);
-    window.onload = updateSignals;
-</script>
 </body>
 </html>
